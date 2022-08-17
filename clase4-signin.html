@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Password</title>
+    <title>Sign In</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
@@ -61,16 +61,23 @@
             font-weight: bold;
             margin-bottom: 4px;
         }
-        .value {
-            color: var(--very-light-pink);
-            font-size: var(--md);
-            margin: 8px 0 32px 0;
-        }
-        .secondary-button {
-            background-color: var(--white);
+        .input {
+            background-color: var(--text-input-field);
+            border: none;
             border-radius: 8px;
-            border: 1px solid var(--hospital-green);
-            color: var(--hospital-green);
+            height: 30px;
+            font-size: var(--md);
+            padding: 6px;
+            margin-bottom: 12px;
+        }
+        .input-name, .input-email, .input-password {
+            margin-bottom: 22px;
+        }
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
             width: 100%;
             cursor: pointer;
             font-size: var(--md);
@@ -99,13 +106,13 @@
             <form action="./Assets/Platzi Yard Sale/" class="form">
                 <div>
                     <label for="name" class="label">Name</label>
-                    <p class="value">Camila Yokoo</p>
+                    <input type="text" id="Name" placeholder="John Smith" class="input input-name">
                     <label for="email" class="label">Email</label>
-                    <p class="value">camilayokoo@gmail.com</p>
+                    <input type="email" id="email" placeholder="name@example.com" class="input input-email">
                     <label for="password" class="label">Password</label>
-                    <p class="value">*********</p>
+                    <input type="password" id="password" placeholder="*********" class="input input-password">
                 </div>
-                <input type="submit" value="Edit" class="secondary-button login-button">
+                <input type="submit" value="Create" class="primary-button login-button">
             </form>
         </div>
     </div>

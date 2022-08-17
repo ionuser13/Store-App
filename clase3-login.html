@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Password</title>
+    <title>Log In</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
@@ -42,19 +42,16 @@
             justify-self: center;
             display: none;
         }
-        .title {
-            font-size: var(--lg);
-            margin-bottom: 36px;
-            text-align: start;
-        }
-        
         .form {
             display: flex;
             flex-direction: column;
         }
-        .form div {
-            display: flex;
-            flex-direction: column;
+        .form a {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
         }
         .label {
             font-size: var(--sm);
@@ -70,7 +67,7 @@
             padding: 6px;
             margin-bottom: 12px;
         }
-        .input-name, .input-email, .input-password {
+        .input-email {
             margin-bottom: 22px;
         }
         .primary-button {
@@ -84,17 +81,29 @@
             font-weight: bold;
             height: 50px;
         }
+        .secondary-button {
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
         .login-button {
             margin-top: 14px;
             margin-bottom: 30px;
         }
         @media (max-width: 640px) {
-            .form {
-                height: 100%;
-                justify-content: space-between;
+            .logo {
+                display: block;
             }
-            .form-container {
-                height: 100%;
+            .secondary-button {
+                position: absolute;
+                bottom: 20px;
+                width: inherit;
             }
         }
     </style>
@@ -102,18 +111,16 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <h1 class="title">My account</h1>
+            <img src="./Assets/Platzi Yard Sale/Logos/logo_yard_sale.svg" alt="logo" class="logo">
             <form action="./Assets/Platzi Yard Sale/" class="form">
-                <div>
-                    <label for="name" class="label">Name</label>
-                    <input type="text" id="Name" placeholder="John Smith" class="input input-name">
-                    <label for="email" class="label">Email</label>
-                    <input type="email" id="email" placeholder="name@example.com" class="input input-email">
-                    <label for="password" class="label">Password</label>
-                    <input type="password" id="password" placeholder="*********" class="input input-password">
-                </div>
-                <input type="submit" value="Create" class="primary-button login-button">
+                <label for="email" class="label">Email address</label>
+                <input type="email" id="email" placeholder="name@example.com" class="input input-email">
+                <label for="password" class="label">Password</label>
+                <input type="password" id="password" placeholder="*********" class="input input-password">
+                <input type="submit" value="Log In" class="primary-button login-button">
+                <a href="/">Forgot my password</a>
             </form>
+            <button class="secondary-button signup-button">Sign Up</button>
         </div>
     </div>
 </body>

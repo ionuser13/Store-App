@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Password</title>
+    <title>My account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
@@ -42,44 +42,29 @@
             justify-self: center;
             display: none;
         }
+        .title {
+            font-size: var(--lg);
+            margin-bottom: 36px;
+            text-align: start;
+        }
+        
         .form {
             display: flex;
             flex-direction: column;
         }
-        .form a {
-            color: var(--hospital-green);
-            font-size: var(--sm);
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 52px;
+        .form div {
+            display: flex;
+            flex-direction: column;
         }
         .label {
             font-size: var(--sm);
             font-weight: bold;
             margin-bottom: 4px;
         }
-        .input {
-            background-color: var(--text-input-field);
-            border: none;
-            border-radius: 8px;
-            height: 30px;
+        .value {
+            color: var(--very-light-pink);
             font-size: var(--md);
-            padding: 6px;
-            margin-bottom: 12px;
-        }
-        .input-email {
-            margin-bottom: 22px;
-        }
-        .primary-button {
-            background-color: var(--hospital-green);
-            border-radius: 8px;
-            border: none;
-            color: var(--white);
-            width: 100%;
-            cursor: pointer;
-            font-size: var(--md);
-            font-weight: bold;
-            height: 50px;
+            margin: 8px 0 32px 0;
         }
         .secondary-button {
             background-color: var(--white);
@@ -97,13 +82,12 @@
             margin-bottom: 30px;
         }
         @media (max-width: 640px) {
-            .logo {
-                display: block;
+            .form {
+                height: 100%;
+                justify-content: space-between;
             }
-            .secondary-button {
-                position: absolute;
-                bottom: 20px;
-                width: inherit;
+            .form-container {
+                height: 100%;
             }
         }
     </style>
@@ -111,16 +95,18 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <img src="./Assets/Platzi Yard Sale/Logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <h1 class="title">My account</h1>
             <form action="./Assets/Platzi Yard Sale/" class="form">
-                <label for="email" class="label">Email address</label>
-                <input type="email" id="email" placeholder="name@example.com" class="input input-email">
-                <label for="password" class="label">Password</label>
-                <input type="password" id="password" placeholder="*********" class="input input-password">
-                <input type="submit" value="Log In" class="primary-button login-button">
-                <a href="/">Forgot my password</a>
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <p class="value">Camila Yokoo</p>
+                    <label for="email" class="label">Email</label>
+                    <p class="value">camilayokoo@gmail.com</p>
+                    <label for="password" class="label">Password</label>
+                    <p class="value">*********</p>
+                </div>
+                <input type="submit" value="Edit" class="secondary-button login-button">
             </form>
-            <button class="secondary-button signup-button">Sign Up</button>
         </div>
     </div>
 </body>
