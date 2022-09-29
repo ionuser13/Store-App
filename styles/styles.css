@@ -160,10 +160,12 @@ nav {
 .menu {
     display: block;
 }
-.navbar-left ul {
+.navbar-left ul, .navbar-email, .desktop-menu {
     display: none;
 }
-.navbar-email {
-    display: none;
 }
+@media (min-width: 641px){
+    .mobile-menu {
+        display: none;
+    }
 }
