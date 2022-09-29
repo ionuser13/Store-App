@@ -4,26 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Yard Sale - Online Store</title>
+    <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --white: #FFFFFF;
-            --black: #000000;
-            --dark: #232830;
-            --very-light-pink: #C7C7C7;
-            --text-input-field: #F7F7F7;
-            --hospital-green: #ACD9B2;
-        }
-        body {
-            font-family: 'Quicksand', sans-serif;
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
 </head>
 <body>
-    
+    <nav>
+        <img src="./Assets/Platzi Yard Sale/Icons/icon_menu.svg" alt="menu" class="menu">
+        <div class="navbar-left">
+            <img src="./Assets/Platzi Yard Sale/Logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <ul>
+                <li>
+                    <a href="/">All</a>
+                </li>
+                <li>
+                    <a href="/">Clothes</a>
+                </li>
+                <li>
+                    <a href="/">Electronics</a>
+                </li>
+                <li>
+                    <a href="/">Furnitures</a>
+                </li>
+                <li>
+                    <a href="/">Toys</a>
+                </li>
+                <li>
+                    <a href="/">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <li class="navbar-email">name@example.com</li>
+                <li class="navbar-shopping-cart">
+                    <img src="./Assets/Platzi Yard Sale/Icons/icon_shopping_cart.svg" alt="shopping cart">
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+        <div class="desktop-menu inactive">
+            <ul>
+                <li>
+                    <a href="/" class="title">My Orders</a>
+                </li>
+                <li>
+                    <a href="/">My account</a>
+                </li>
+                <li>
+                    <a href="/" class="title">Sign out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script src="./JS/main.js"></script>
 </body>
 </html>
