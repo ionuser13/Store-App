@@ -120,17 +120,20 @@ nav {
 }
 /*mobile menu styles*/
 .mobile-menu {
+    position: absolute;
+    left: 0px;
+    transition: 400ms;
     padding: 24px;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+.slide-right{
+    left: -400px;
+}
 .menu {
     cursor: pointer;
-}
-.inactive-mobile {
-    display: none;
 }
 .mobile-menu a {
     text-decoration: none;

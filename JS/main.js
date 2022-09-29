@@ -9,5 +9,5 @@ const burgerBtn = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".mobile-menu")
 burgerBtn.addEventListener("click", toggleMobile)
 function toggleMobile() {
-    mobileMenu.classList.toggle("inactive-mobile")
+    mobileMenu.classList.toggle("slide-right")
 }
