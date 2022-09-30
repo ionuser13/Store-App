@@ -7,7 +7,8 @@ const mobileMenu = document.querySelector(".mobile-menu")
 //shopping cart aside vars
 const menuCartIcon = document.querySelector(".navbar-shopping-cart")
 const aside = document.querySelector(".product-detail")
-
+//events
+//to open desktop menu and close the cart menu if this is open
 menuEmail.addEventListener("click", toggleMenu);
 function toggleMenu(){
     const isAsideClosed = aside.classList.contains("slide-left")
@@ -16,7 +17,7 @@ function toggleMenu(){
     }
     desktopMenu.classList.toggle("inactive")
 }
-
+//to open mobile menu and close cart menu if this is open
 burgerBtn.addEventListener("click", toggleMobile)
 function toggleMobile() {
     const isAsideClosed = aside.classList.contains("slide-left")
@@ -25,7 +26,7 @@ function toggleMobile() {
     }
     mobileMenu.classList.toggle("slide-right")
 }
-
+//to open cart menu and close mobile menu or desktop menu if one of them is open
 menuCartIcon.addEventListener("click", toggleCartAside)
 function toggleCartAside(){
     const isMobileMenuClosed = mobileMenu.classList.contains("slide-right");
