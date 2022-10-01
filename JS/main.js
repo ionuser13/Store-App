@@ -80,7 +80,21 @@ for (item of productList){
     img.setAttribute("src", product.image);
 
     const productInfo = document.createElement("div");
-    productInfo.classList.add("product-info")
-
+    info.classList.add("product-info")
+    
     const info = document.createElement("div");
+
+    const productPrice = document.createElement("p");
+    productPrice.innerText = "$" + item.price;
+
+    const productName = document.createElement("p");
+    productName.innerText = "$" + item.name;
+
+    const productInfoFigure = document.createElement("figure");
+    
+    const productImgCart = document.createElement("img")
+    productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
+//we've created created all the elements
+
+    
 }
