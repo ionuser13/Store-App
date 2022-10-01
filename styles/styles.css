@@ -15,10 +15,17 @@
     --md: 16px;
     --lg: 18px;
 }
+html, body {
+    overflow-x: hidden;
+  }
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
-    overflow-x: hidden;
+    position: relative;
+}
+/*no-scroll when  product detail appears*/
+.no-scroll{
+    overflow-y: hidden;
 }
 nav {
     display: flex;
@@ -126,7 +133,7 @@ nav {
     left: 0px;
     transition: 400ms;
     padding: 24px;
-    height: 90%;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -364,6 +371,7 @@ nav {
     right: -100%;
 }
 }
+
 @media (min-width: 641px){
     .mobile-menu {
         display: none;

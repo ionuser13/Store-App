@@ -7,6 +7,7 @@ const mobileMenu = document.querySelector(".mobile-menu")
 //shopping cart aside vars
 const menuCartIcon = document.querySelector(".navbar-shopping-cart")
 const aside = document.querySelector(".product-detail")
+const html = document.querySelector("html")
 //events
 //to open desktop menu and close the cart menu if this is open
 menuEmail.addEventListener("click", toggleMenu);
@@ -60,6 +61,48 @@ productList.push({
     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 }
 )
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)   
 function renderImage(arr){
     const cardsContainer = document.querySelector(".cards-container")
 for (item of productList){
