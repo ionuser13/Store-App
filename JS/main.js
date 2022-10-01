@@ -72,15 +72,16 @@ productList.push({
     </figure>
 </div>
 </div> */}
+const cardsContainer = document.querySelector(".cards-container")
 for (item of productList){
     const productCard = document.createElement("div");
     productCard.classList.add("product-card")
 
     const img = document.createElement("img");
-    img.setAttribute("src", product.image);
+    img.setAttribute("src", item.image);
 
     const productInfo = document.createElement("div");
-    info.classList.add("product-info")
+    productInfo.classList.add("product-info")
     
     const info = document.createElement("div");
 
@@ -88,13 +89,25 @@ for (item of productList){
     productPrice.innerText = "$" + item.price;
 
     const productName = document.createElement("p");
-    productName.innerText = "$" + item.name;
+    productName.innerText = item.name;
 
     const productInfoFigure = document.createElement("figure");
     
     const productImgCart = document.createElement("img")
     productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
+    productImgCart.classList.add("cart-image")
 //we've created created all the elements
 
-    
+    productInfoFigure.appendChild(productImgCart);
+
+    info.appendChild(productPrice);
+    info.appendChild(productName);
+
+    productInfo.appendChild(info)
+    productInfo.appendChild(productInfoFigure);
+
+    productCard.appendChild(img)
+    productCard.appendChild(productInfo)
+
+    cardsContainer.appendChild(productCard);
 }

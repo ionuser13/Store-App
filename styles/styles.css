@@ -317,7 +317,7 @@ nav {
 .product-info figure {
     margin: 0;
 }
-.product-info figure img {
+.product-info .cart-image {
     width: 36px;
     height: 36px;
 }
