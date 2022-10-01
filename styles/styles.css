@@ -24,9 +24,9 @@ body {
     position: relative;
 }
 /*no-scroll when  product detail appears*/
-.no-scroll{
+/* .no-scroll{
     overflow-y: hidden;
-}
+} */
 nav {
     display: flex;
     justify-content: space-between;
