@@ -60,19 +60,8 @@ productList.push({
     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 }
 )
-{/* <div class="product-card">
-<img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="product">
-<div class="product-info">
-    <div>
-        <p>120.00</p>
-        <p>Bike</p>
-    </div>
-    <figure>
-        <img src="./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg">
-    </figure>
-</div>
-</div> */}
-const cardsContainer = document.querySelector(".cards-container")
+function renderImage(arr){
+    const cardsContainer = document.querySelector(".cards-container")
 for (item of productList){
     const productCard = document.createElement("div");
     productCard.classList.add("product-card")
@@ -111,3 +100,5 @@ for (item of productList){
 
     cardsContainer.appendChild(productCard);
 }
+}
+renderImage(productList)
