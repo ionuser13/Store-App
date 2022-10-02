@@ -23,10 +23,6 @@ body {
     font-family: 'Quicksand', sans-serif;
     position: relative;
 }
-/*no-scroll when  product detail appears*/
-/* .no-scroll{
-    overflow-y: hidden;
-} */
 nav {
     display: flex;
     justify-content: space-between;
@@ -351,25 +347,21 @@ nav {
         width: 140px;
         height: 140px;
     }
-}
-@media (max-width: 640px) {
     .product-detail {
         width: 100%;
     }
-}
-@media (max-width: 640px) {
-.menu {
-    display: block;
-}
-.navbar-left ul, .navbar-email, .desktop-menu {
-    display: none;
-}
-.slide-right {
-    left: -100%;
-}
-.slide-left {
-    right: -100%;
-}
+    .menu {
+        display: block;
+    }
+    .navbar-left ul, .navbar-email, .desktop-menu {
+        display: none;
+    }
+    .slide-right {
+        left: -100%;
+    }
+    .slide-left {
+        right: -100%;
+    }
 }
 
 @media (min-width: 641px){
