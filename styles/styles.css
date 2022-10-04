@@ -360,8 +360,13 @@ aside {
     top: 24px;
     left: 24px;
     z-index: 2;
-    padding: 12px;
+    padding: 16px;
     border-radius: 50%;
+}
+.product-detail-close img {
+    position: relative;
+    top: -9px;
+    left: -7px;
 }
 .product-detail-close:hover {
     cursor: pointer;

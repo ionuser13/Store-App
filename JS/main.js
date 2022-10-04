@@ -8,6 +8,8 @@ const mobileMenu = document.querySelector(".mobile-menu")
 const menuCartIcon = document.querySelector(".navbar-shopping-cart")
 const shoppingCartContainer = document.querySelector("#shoppingCartContainer")
 const body = document.querySelector("body")
+//product detail selector
+const productDetailContainer = document.querySelector("#productDetail")
 //events
 //to open desktop menu and close the cart menu if this is open
 menuEmail.addEventListener("click", toggleMenu);
@@ -51,6 +53,12 @@ function toggleCartAside(){
         body.classList.add("height")
     }
     shoppingCartContainer.classList.toggle("slide-left")
+}
+
+//opens the aside when clicking an image from the store
+function openProductDetail() {
+    productDetailContainer.classList.remove("slide-left");
+    body.classList.add("height")
 }
 
 //for the product containers
@@ -114,6 +122,30 @@ productList.push({
     price: 220,
     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 }
+)
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)      
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)   
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
+)   
+productList.push({
+    name: "Monitor",
+    price: 220,
+    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+}
 )   
 function renderImage(arr){
     const cardsContainer = document.querySelector(".cards-container")
@@ -123,6 +155,7 @@ for (item of productList){
 
     const img = document.createElement("img");
     img.setAttribute("src", item.image);
+    img.addEventListener("click", openProductDetail)
 
     const productInfo = document.createElement("div");
     productInfo.classList.add("product-info")
@@ -141,7 +174,7 @@ for (item of productList){
     productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
     productImgCart.classList.add("cart-image")
 //we've created created all the elements
-
+//declares which element goes inside another
     productInfoFigure.appendChild(productImgCart);
 
     info.appendChild(productPrice);
