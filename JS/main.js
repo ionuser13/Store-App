@@ -54,6 +54,10 @@ function toggleCartAside(){
     else{
         body.classList.add("height")
     }
+    const isProductDetailClosed = productDetailContainer.classList.contains("slide-left");
+    if(!isProductDetailClosed){
+        productDetailContainer.classList.add("slide-left");
+    }
     shoppingCartContainer.classList.toggle("slide-left")
     shoppingCartContainer.classList.toggle("height2")
     
@@ -63,6 +67,7 @@ function toggleCartAside(){
 function openProductDetail() {
     productDetailContainer.classList.remove("slide-left");
     productDetailContainer.classList.add("height2");
+    shoppingCartContainer.classList.add("slide-left");
     body.classList.add("height")
 }
 //closes the product detail view when clicking
@@ -72,6 +77,8 @@ function closeAside(){
     productDetailContainer.classList.remove("height2");
     body.classList.remove("height");
 }
+//when we open cart after opening product detail and viceversa
+
 //for the product containers
 const productList = [];// simulates the array that JS would return after consulting the API REST
 productList.push({
