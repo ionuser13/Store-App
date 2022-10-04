@@ -210,6 +210,9 @@ aside {
 .slide-left {
     right: -400px;
 }
+.close-cart {
+    cursor: pointer;
+}
 .title-container {
     display: flex;
     padding: 24px 0;

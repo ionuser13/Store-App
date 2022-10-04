@@ -11,6 +11,8 @@ const body = document.querySelector("body")
 //product detail selector
 const productDetailContainer = document.querySelector("#productDetail");
 const productDetailClose = document.querySelector(".product-detail-close");
+//close cart
+const closeCart = document.querySelector(".close-cart");
 //events
 //to open desktop menu and close the cart menu if this is open
 menuEmail.addEventListener("click", toggleMenu);
@@ -77,8 +79,11 @@ function closeAside(){
     productDetailContainer.classList.remove("height2");
     body.classList.remove("height");
 }
-//when we open cart after opening product detail and viceversa
-
+//to close the shopping cart from inside
+closeCart.addEventListener("click", closeShopCart)
+function closeShopCart(){
+    shoppingCartContainer.classList.add("slide-left");
+}
 //for the product containers
 const productList = [];// simulates the array that JS would return after consulting the API REST
 productList.push({
