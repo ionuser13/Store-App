@@ -29,10 +29,10 @@ function toggleMobile() {
         shoppingCartContainer.classList.add("slide-left")
     }
     if(!mobileMenu.classList.contains("slide-right")){
-        body.classList.remove("height2")
+        body.classList.remove("height")
     }
     else{
-        body.classList.add("height2")
+        body.classList.add("height")
     }
     mobileMenu.classList.toggle("slide-right")
     mobileMenu.classList.toggle("height2")
@@ -49,13 +49,14 @@ function toggleCartAside(){
         mobileMenu.classList.add("slide-right")
     }
     if(!shoppingCartContainer.classList.contains("slide-left")){
-        body.classList.remove("height2")
+        body.classList.remove("height")
     }
     else{
-        body.classList.add("height2")
+        body.classList.add("height")
     }
     shoppingCartContainer.classList.toggle("slide-left")
     shoppingCartContainer.classList.toggle("height2")
+    
 }
 
 //opens the aside when clicking an image from the store

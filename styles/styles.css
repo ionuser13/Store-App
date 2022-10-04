@@ -441,6 +441,9 @@ aside {
     .slide-left {
         right: -100%;
     }
+    .height {
+        position: fixed;
+    }
 }
 
 @media (min-width: 641px){
