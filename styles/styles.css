@@ -17,15 +17,23 @@
 }
 html, body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     position: relative;
+    width: 100%;
+
 }
 .height {
-    position: fixed;
+    position: absolute;
     width: 100%;
+
+}
+.height2 {
+    position: fixed;
+    margin-left: auto;
 }
 nav {
     display: flex;
@@ -35,6 +43,7 @@ nav {
     border-bottom: 1px solid var(--very-light-pink);
     width: 100%;
     background-color: var(--white);
+    position: fixed;
 }
 .menu {
     display: none;
@@ -311,7 +320,7 @@ aside {
 }
 /*product list*/
 .cards-container {
-    margin-top: 20px;
+    margin-top: 85px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 24px;
@@ -325,6 +334,7 @@ aside {
     height: 240px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
 }
 .product-card .product-info {
     display: flex;
@@ -370,6 +380,9 @@ aside {
 }
 .product-detail-close:hover {
     cursor: pointer;
+}
+#productDetail {
+    top: 61px;
 }
 #productDetail > img:nth-child(2) {
     width: 100%;

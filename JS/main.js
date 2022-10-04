@@ -9,7 +9,8 @@ const menuCartIcon = document.querySelector(".navbar-shopping-cart")
 const shoppingCartContainer = document.querySelector("#shoppingCartContainer")
 const body = document.querySelector("body")
 //product detail selector
-const productDetailContainer = document.querySelector("#productDetail")
+const productDetailContainer = document.querySelector("#productDetail");
+const productDetailClose = document.querySelector(".product-detail-close");
 //events
 //to open desktop menu and close the cart menu if this is open
 menuEmail.addEventListener("click", toggleMenu);
@@ -28,12 +29,13 @@ function toggleMobile() {
         shoppingCartContainer.classList.add("slide-left")
     }
     if(!mobileMenu.classList.contains("slide-right")){
-        body.classList.remove("height")
+        body.classList.remove("height2")
     }
     else{
-        body.classList.add("height")
+        body.classList.add("height2")
     }
     mobileMenu.classList.toggle("slide-right")
+    mobileMenu.classList.toggle("height2")
 }
 //to open cart menu and close mobile menu or desktop menu if one of them is open
 menuCartIcon.addEventListener("click", toggleCartAside)
@@ -47,20 +49,28 @@ function toggleCartAside(){
         mobileMenu.classList.add("slide-right")
     }
     if(!shoppingCartContainer.classList.contains("slide-left")){
-        body.classList.remove("height")
+        body.classList.remove("height2")
     }
     else{
-        body.classList.add("height")
+        body.classList.add("height2")
     }
     shoppingCartContainer.classList.toggle("slide-left")
+    shoppingCartContainer.classList.toggle("height2")
 }
 
 //opens the aside when clicking an image from the store
 function openProductDetail() {
     productDetailContainer.classList.remove("slide-left");
+    productDetailContainer.classList.add("height2");
     body.classList.add("height")
 }
-
+//closes the product detail view when clicking
+productDetailClose.addEventListener("click", closeAside) 
+function closeAside(){
+    productDetailContainer.classList.add("slide-left");
+    productDetailContainer.classList.remove("height2");
+    body.classList.remove("height");
+}
 //for the product containers
 const productList = [];// simulates the array that JS would return after consulting the API REST
 productList.push({
