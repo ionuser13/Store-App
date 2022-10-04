@@ -62,9 +62,7 @@ function toggleCartAside(){
     }
     shoppingCartContainer.classList.toggle("slide-left")
     shoppingCartContainer.classList.toggle("height2")
-    
 }
-
 //opens the aside when clicking an image from the store
 function openProductDetail() {
     productDetailContainer.classList.remove("slide-left");
