@@ -36,6 +36,8 @@ function toggleMobile() {
     }
     mobileMenu.classList.toggle("slide-right")
     mobileMenu.classList.toggle("height2")
+    productDetailContainer.classList.add("slide-left");
+    
 }
 //to open cart menu and close mobile menu or desktop menu if one of them is open
 menuCartIcon.addEventListener("click", toggleCartAside)
