@@ -9,4 +9,4 @@ The page can be seen [here](https://ionuser13.github.io/Store-App/)
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 ## Contact
-You can find me on ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fionuser03)
+You can find me on [Twitter](https://twitter.com/ionuser03)
