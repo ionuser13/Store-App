@@ -1,3 +1,5 @@
+const api = "https://api.escuelajs.co/api/v1/";
+
 //menu desktop
 const menuEmail = document.querySelector(".navbar-email");
 const desktopMenu = document.querySelector(".desktop-menu")
@@ -90,92 +92,107 @@ function closeShopCart(){
     shoppingCartContainer.classList.add("slide-left");
 }
 
+let productList = [];// simulates the array that JS would return after consulting the API REST
+//call to the platzi fakeapi
+async function loadProducts() {
+    const response = await fetch(`${api}products?offset=0&limit=10`);
+    const data = await response.json();
+    try {
+        productList = data;
+        console.log("data")
+        console.log(productList)
+        renderImage(productList)
+    }
+    catch (error) {
+        console.error(error)
+    }
+}
 //for the product containers
-const productList = [];// simulates the array that JS would return after consulting the API REST
-productList.push({
-    name: "bike",
-    price: 120,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "shoes",
-    price: 40,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)      
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)   
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)   
-productList.push({
-    name: "Monitor",
-    price: 220,
-    image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-}
-)
+
+// productList.push({
+//     name: "bike",
+//     price: 120,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "shoes",
+//     price: 40,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )      
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )   
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )   
+// productList.push({
+//     name: "Monitor",
+//     price: 220,
+//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+// }
+// )
 
 function renderImage(arr){
     const cardsContainer = document.querySelector(".cards-container")
@@ -184,7 +201,7 @@ function renderImage(arr){
         productCard.classList.add("product-card")
 
         const img = document.createElement("img");
-        img.setAttribute("src", item.image);
+        img.setAttribute("src", item.images[0]);
         img.addEventListener("click", openProductDetail)
 
         const productInfo = document.createElement("div");
@@ -196,7 +213,7 @@ function renderImage(arr){
         productPrice.innerText = "$" + item.price;
 
         const productName = document.createElement("p");
-        productName.innerText = item.name;
+        productName.innerText = item.title;
 
         const productInfoFigure = document.createElement("figure");
         
@@ -220,4 +237,5 @@ function renderImage(arr){
     cardsContainer.appendChild(productCard);
 }
 }
-renderImage(productList)
+
+loadProducts()
