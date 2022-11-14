@@ -192,6 +192,10 @@ nav {
     color: var(--hospital-green) !important;
 }
 /*Shopping cart styles*/
+.none {
+    display: none;
+    transition: .3s;
+}
 aside {
     background-color: var(--white);
     position: absolute;
@@ -199,7 +203,7 @@ aside {
     height: calc(100vh - 60px);
     position: absolute;
     right: 0;
-    transition: 400ms;
+    transition: 300ms;
 }
 #shoppingCartContainer {
     top: 61px;
