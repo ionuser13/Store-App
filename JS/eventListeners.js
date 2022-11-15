@@ -69,7 +69,7 @@ function openProductDetail() {
     productDetailContainer.classList.add("height2");
     shoppingCartContainer.classList.add("slide-left");
     body.classList.add("height")
-}
+}//opens the aside when clicking an image from the store
 
 function closeAside(){
     productDetailContainer.classList.add("slide-left");

@@ -11,7 +11,7 @@ import { closeCart } from "./main-selectors.js";
 import { cardsContainer } from "./main-selectors.js";
 
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart } from "./eventListeners.js";
-const api = "https://api.escuelajs.co/api/v1/";
+export const api = "https://api.escuelajs.co/api/v1/";
 
 //events
 //to open desktop menu and close the cart menu if this is open
@@ -23,19 +23,15 @@ burgerBtn.addEventListener("click", toggleMobile)
 //to open cart menu and close mobile menu or desktop menu if one of them is open
 menuCartIcon.addEventListener("click", toggleCartAside)
 
-//opens the aside when clicking an image from the store
-
 //closes the product detail view when clicking
 productDetailClose.addEventListener("click", closeAside) 
 
 //to close the shopping cart from inside
 closeCart.addEventListener("click", closeShopCart)
 
-let productList = [];// simulates the array that JS would return after consulting the API REST
-
 //call to the platzi fakeapi
-async function loadProducts() {
-    const response = await fetch(`${api}products?offset=0&limit=10`);
+export async function loadProducts(urlApi) {
+    const response = await fetch(urlApi);
     const data = await response.json();
     try {
         renderImage(data)
@@ -45,7 +41,7 @@ async function loadProducts() {
     }
 }
 
-function renderImage(arr){
+export function renderImage(arr){
     for (let item of arr){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card")
@@ -69,7 +65,8 @@ function renderImage(arr){
         
         const productImgCart = document.createElement("img")
         productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
-        productImgCart.classList.add("cart-image")
+        productImgCart.classList.add("cart-image");
+        console.log(item.category)
 //we've created created all the elements
 
 //declares which element goes inside another
@@ -85,4 +82,4 @@ function renderImage(arr){
 }
 }
 
-loadProducts()
+// loadProducts(`${api}products?offset=0&limit=10`)
