@@ -17,3 +17,5 @@ export const productDetailClose = document.querySelector(".product-detail-close"
 //close cart
 export const closeCart = document.querySelector(".close-cart");
 export const cardsContainer = document.querySelector(".cards-container")
+
+export const loadMore = document.querySelector(".load");

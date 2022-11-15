@@ -286,6 +286,12 @@ aside {
     justify-content: center;
     align-items: center;
 }
+.load {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    max-width: 320px;
+}
 .add-to-cart-button {
     display: flex;
     align-items: center;

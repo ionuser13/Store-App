@@ -9,6 +9,7 @@ import { productDetailContainer } from "./main-selectors.js";
 import { productDetailClose } from "./main-selectors.js";
 import { closeCart } from "./main-selectors.js";
 import { cardsContainer } from "./main-selectors.js";
+import { loadMore } from "./main-selectors.js";
 
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
@@ -66,7 +67,6 @@ export function renderImage(arr){
         const productImgCart = document.createElement("img")
         productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
         productImgCart.classList.add("cart-image");
-        console.log(item.category)
 //we've created created all the elements
 
 //declares which element goes inside another
@@ -81,5 +81,9 @@ export function renderImage(arr){
     cardsContainer.appendChild(productCard);
 }
 }
-
-loadProducts(`${api}products?offset=0&limit=10`)
+let offset = 0;
+loadProducts(`${api}products?offset=${offset}&limit=10`)
+loadMore.addEventListener("click", () => {
+    offset+=10;
+    loadProducts(`${api}products?offset=${offset}&limit=10`)
+})
