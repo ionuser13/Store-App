@@ -31,10 +31,7 @@ body {
     width: 100%;
 
 }
-.height2 {
-    position: fixed;
-    margin-left: auto;
-}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -150,7 +147,7 @@ nav {
 /*mobile menu styles*/
 .mobile-menu {
     background-color: var(--white);
-    position: absolute;
+    position: fixed;
     top: 61px;
     left: 0px;
     transition: 400ms;
@@ -158,7 +155,6 @@ nav {
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     overflow: auto;
 }
 .slide-right{
@@ -211,6 +207,7 @@ aside {
     padding: 0 24px;
     padding-bottom: 16px;
     overflow: auto;
+    position: fixed;
 }
 .slide-left {
     right: -400px;
@@ -399,6 +396,7 @@ aside {
 }
 #productDetail {
     top: 61px;
+    position: fixed;
 }
 #productDetail > img:nth-child(2) {
     width: 100%;

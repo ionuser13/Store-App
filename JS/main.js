@@ -82,4 +82,4 @@ export function renderImage(arr){
 }
 }
 
-// loadProducts(`${api}products?offset=0&limit=10`)
+loadProducts(`${api}products?offset=0&limit=10`)
