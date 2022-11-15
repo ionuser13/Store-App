@@ -9,12 +9,13 @@ import {loadProducts} from "./main.js";
 import { api } from "./main.js"
 import { cardsContainer } from "./main-selectors.js";
 import {mobileMenu} from "./main-selectors.js"
+import {offset} from "./main.js"
 
 all.forEach(btn => {
     btn.addEventListener("click", () => {
         mobileMenu.classList.add("slide-right");
         cardsContainer.innerText = "";
-        loadProducts(`${api}products?offset=0&limit=10`)}
+        loadProducts(`${api}products?offset=${offset}&limit=10`)}
 )})
 
 clothes.forEach(btn => {

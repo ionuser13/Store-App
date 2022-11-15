@@ -81,9 +81,10 @@ export function renderImage(arr){
     cardsContainer.appendChild(productCard);
 }
 }
-let offset = 0;
-loadProducts(`${api}products?offset=${offset}&limit=10`)
+
+export let offset = 0;
 loadMore.addEventListener("click", () => {
     offset+=10;
     loadProducts(`${api}products?offset=${offset}&limit=10`)
 })
+loadProducts(`${api}products?offset=${offset}&limit=10`)
