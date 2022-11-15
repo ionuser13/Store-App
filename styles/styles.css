@@ -290,7 +290,7 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 8px 0;
+    margin-top: 36px;
 }    
 .product-info {
     margin: 24px 24px 0 24px;
@@ -304,7 +304,7 @@ aside {
 .product-info p:nth-child(2) {
     color: var(--very-light-pink);
     font-size: var(--md);
-    margin: 4px 0;
+    margin-top: 36px;
 }
 .product-info p:nth-child(3) {
     color: var(--very-light-pink);
@@ -379,8 +379,8 @@ aside {
     width: 14px;
     height: 14px;
     position: absolute;
-    top: 24px;
-    left: 24px;
+    top: 12px;
+    left: 12px;
     z-index: 2;
     padding: 16px;
     border-radius: 50%;
@@ -454,6 +454,12 @@ aside {
     .height {
         position: fixed;
     }
+    .product-info p:nth-child(2) {
+        margin: 4px 0;
+    }
+    .add-to-cart-button {
+        margin: 8px 0;
+    }   
 }
 
 @media (min-width: 641px){
