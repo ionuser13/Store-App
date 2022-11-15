@@ -1,21 +1,16 @@
+import { menuEmail } from "./main-selectors.js";
+import { desktopMenu } from "./main-selectors.js";
+import { burgerBtn } from "./main-selectors.js";
+import { mobileMenu } from "./main-selectors.js";
+import { menuCartIcon } from "./main-selectors.js";
+import { shoppingCartContainer } from "./main-selectors.js";
+import { body } from "./main-selectors.js";
+import { productDetailContainer } from "./main-selectors.js";
+import { productDetailClose } from "./main-selectors.js";
+import { closeCart } from "./main-selectors.js";
+import { cardsContainer } from "./main-selectors.js";
+
 const api = "https://api.escuelajs.co/api/v1/";
-
-//menu desktop
-const menuEmail = document.querySelector(".navbar-email");
-const desktopMenu = document.querySelector(".desktop-menu")
-//mobile menu vars
-const burgerBtn = document.querySelector(".menu");
-const mobileMenu = document.querySelector(".mobile-menu")
-//shopping cart aside vars
-const menuCartIcon = document.querySelector(".navbar-shopping-cart")
-const shoppingCartContainer = document.querySelector("#shoppingCartContainer")
-const body = document.querySelector("body")
-//product detail selector
-const productDetailContainer = document.querySelector("#productDetail");
-const productDetailClose = document.querySelector(".product-detail-close");
-//close cart
-const closeCart = document.querySelector(".close-cart");
-
 //events
 //to open desktop menu and close the cart menu if this is open
 menuEmail.addEventListener("click", toggleMenu);
@@ -107,96 +102,9 @@ async function loadProducts() {
         console.error(error)
     }
 }
-//for the product containers
-
-// productList.push({
-//     name: "bike",
-//     price: 120,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "shoes",
-//     price: 40,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )      
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )   
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )   
-// productList.push({
-//     name: "Monitor",
-//     price: 220,
-//     image: "https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-// }
-// )
 
 function renderImage(arr){
-    const cardsContainer = document.querySelector(".cards-container")
-    for (item of productList){
+    for (let item of arr){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card")
 
