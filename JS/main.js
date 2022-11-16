@@ -45,7 +45,8 @@ export async function loadProducts(urlApi) {
         renderImage(data)
     }
     catch (error) {
-        console.error(error)
+        console.error(error);
+        loadProducts(urlApi)
     }
 }
 
@@ -62,20 +63,6 @@ export function renderImage(arr){
             productNameExp.innerHTML = item.title;
             productDescriptionExp.innerText = item.description;
             openProductDetail();
-            // const imgExpanded = document.createElement("img");
-            // imgExpanded.setAttribute("src", item.images[0]);
-
-            // const priceExpanded = document.createElement("p");
-            // priceExpanded.innerText = item.price;
-
-            // const nameExapnded = document.createElement("p");
-            // nameExapnded.innerText = item.title;
-
-            // const productDescription = document.createElement("p");
-            // productDescription.innerText = item.description;
-
-            // productDetailContainer.append(imgExpanded, priceExpanded, nameExapnded, productDescription)
-            
         })
 
         const productInfo = document.createElement("div");
@@ -97,7 +84,7 @@ export function renderImage(arr){
 //we've created created all the elements
 
 //declares which element goes inside another
-        productInfoFigure.appendChild(productImgCart);
+        productInfoFigure.append    (productImgCart);
 
         info.append(productPrice, productName);
 
