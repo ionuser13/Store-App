@@ -15,7 +15,7 @@ export const productDetailContainer = document.querySelector("#productDetail");
 export const productDetailClose = document.querySelector(".product-detail-close");
 
 //close cart
-export const closeCart = document.querySelector(".close-cart");
+export const closeCart = document.querySelectorAll(".close-cart");
 export const cardsContainer = document.querySelector(".cards-container")
 
 export const loadMore = document.querySelector(".load");
@@ -25,3 +25,10 @@ export const productImageExp = document.querySelector("#productImage");
 export const productPriceExp = document.querySelector("#product-price");
 export const productNameExp = document.querySelector("#product-name");
 export const productDescriptionExp = document.querySelector("#product-description");
+
+//my order
+export const myOrders = document.querySelector("#myOrders");
+
+
+//desktop menu
+export const myOrdersMenu = document.querySelectorAll(".my-orders-desk")

@@ -143,6 +143,7 @@ nav {
     text-decoration: 20px;
     margin-bottom: 20px;
     display: inline-block;
+    cursor: pointer;
 }
 /*mobile menu styles*/
 .mobile-menu {
@@ -230,6 +231,7 @@ aside {
     margin-bottom: 24px;
     border-radius: 8px;
     padding: 24px;
+    z-index: -1;
 }
 .order p:nth-child(1) {
     display: flex;
@@ -442,8 +444,10 @@ aside {
     color: var(--very-light-pink);
 }
 .scroll {
-    height: 400px;
+    height: 450px;
     overflow-y: scroll;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 8px;
 }
 /*Media queries*/
 @media (max-width: 640px) {

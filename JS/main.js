@@ -15,8 +15,10 @@ import { productImageExp } from "./main-selectors.js";
 import { productPriceExp } from "./main-selectors.js";
 import { productNameExp } from "./main-selectors.js";
 import { productDescriptionExp } from "./main-selectors.js";
+import { myOrders } from "./main-selectors.js";
+import { myOrdersMenu } from "./main-selectors.js";
 
-import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart } from "./eventListeners.js";
+import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart, openMyOrders } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
 
 
@@ -35,7 +37,14 @@ menuCartIcon.addEventListener("click", toggleCartAside)
 productDetailClose.addEventListener("click", closeAside) 
 
 //to close the shopping cart from inside
-closeCart.addEventListener("click", closeShopCart)
+closeCart.forEach(button => {
+    button.addEventListener("click", closeShopCart);
+})
+
+
+myOrdersMenu.forEach(button => {
+    button.addEventListener("click", openMyOrders)
+})
 
 //call to the platzi fakeapi
 export async function loadProducts(urlApi) {
