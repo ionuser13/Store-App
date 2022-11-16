@@ -19,3 +19,9 @@ export const closeCart = document.querySelector(".close-cart");
 export const cardsContainer = document.querySelector(".cards-container")
 
 export const loadMore = document.querySelector(".load");
+
+//product detail
+export const productImageExp = document.querySelector("#productImage");
+export const productPriceExp = document.querySelector("#product-price");
+export const productNameExp = document.querySelector("#product-name");
+export const productDescriptionExp = document.querySelector("#product-description");

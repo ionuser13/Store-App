@@ -11,8 +11,15 @@ import { closeCart } from "./main-selectors.js";
 import { cardsContainer } from "./main-selectors.js";
 import { loadMore } from "./main-selectors.js";
 
+import { productImageExp } from "./main-selectors.js";
+import { productPriceExp } from "./main-selectors.js";
+import { productNameExp } from "./main-selectors.js";
+import { productDescriptionExp } from "./main-selectors.js";
+
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
+
+
 
 //events
 //to open desktop menu and close the cart menu if this is open
@@ -49,7 +56,27 @@ export function renderImage(arr){
 
         const img = document.createElement("img");
         img.setAttribute("src", item.images[0]);
-        img.addEventListener("click", openProductDetail)
+        img.addEventListener("click", () => {
+            productImageExp.setAttribute("src", item.images[0]);
+            productPriceExp.innerHTML = `$ ${item.price}`;
+            productNameExp.innerHTML = item.title;
+            productDescriptionExp.innerText = item.description;
+            openProductDetail();
+            // const imgExpanded = document.createElement("img");
+            // imgExpanded.setAttribute("src", item.images[0]);
+
+            // const priceExpanded = document.createElement("p");
+            // priceExpanded.innerText = item.price;
+
+            // const nameExapnded = document.createElement("p");
+            // nameExapnded.innerText = item.title;
+
+            // const productDescription = document.createElement("p");
+            // productDescription.innerText = item.description;
+
+            // productDetailContainer.append(imgExpanded, priceExpanded, nameExapnded, productDescription)
+            
+        })
 
         const productInfo = document.createElement("div");
         productInfo.classList.add("product-info")
@@ -70,15 +97,15 @@ export function renderImage(arr){
 //we've created created all the elements
 
 //declares which element goes inside another
-    productInfoFigure.appendChild(productImgCart);
+        productInfoFigure.appendChild(productImgCart);
 
-    info.append(productPrice, productName);
+        info.append(productPrice, productName);
 
-    productInfo.append(info, productInfoFigure)
+        productInfo.append(info, productInfoFigure)
 
-    productCard.append(img, productInfo)
+        productCard.append(img, productInfo)
 
-    cardsContainer.appendChild(productCard);
+        cardsContainer.appendChild(productCard);
 }
 }
 
