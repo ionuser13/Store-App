@@ -18,6 +18,7 @@ import { productDescriptionExp } from "./main-selectors.js";
 import { myOrders } from "./main-selectors.js";
 import { myOrdersMenu } from "./main-selectors.js";
 import { myOrderContent } from "./main-selectors.js";
+import { totalPrice } from "./main-selectors.js";
 
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart, openMyOrders } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
@@ -61,7 +62,7 @@ export async function loadProducts(urlApi) {
 }
 
 let orderProducts = [];
-let priceSum = [];
+let priceSum = 0;
 
 export function renderImage(arr){
     for (let item of arr){
@@ -96,8 +97,10 @@ export function renderImage(arr){
         productImgCart.classList.add("cart-image");
         productImgCart.addEventListener("click", () => {
             orderProducts.push(item);
+            priceSum = priceSum + item.price;
+            totalPrice.innerText = `$${priceSum}`;
+            console.log(priceSum)
             renderOrderProducts(orderProducts)
-            console.log(orderProducts)
         })
 //we've created created all the elements
 
@@ -132,8 +135,8 @@ export function renderOrderProducts(arr) {
         const closeIcon = document.createElement("img");
         closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
 
-        orderItem.append(itemFigure, itemOrderName, itemOrderPrice, closeIcon)
-        myOrderContent.insertBefore(orderItem, orderTotal)
+        orderItem.append(itemFigure, itemOrderName, itemOrderPrice, closeIcon);
+        myOrderContent.append(orderItem)
 }
 
 export let offset = 0;

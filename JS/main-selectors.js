@@ -34,5 +34,6 @@ export const myOrders = document.querySelector("#myOrders");
 export const myOrdersMenu = document.querySelectorAll(".my-orders-desk");
 
 //order items
-export const myOrderContent = document.querySelector(".my-order-content");
-export const orderTotal = document.querySelector(".total")
+export const myOrderContent = document.querySelector(".products");
+export const orderTotal = document.querySelector(".total");
+export const totalPrice = document.querySelector(".total-price");
