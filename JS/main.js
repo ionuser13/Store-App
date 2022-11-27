@@ -15,6 +15,7 @@ import { productImageExp } from "./main-selectors.js";
 import { productPriceExp } from "./main-selectors.js";
 import { productNameExp } from "./main-selectors.js";
 import { productDescriptionExp } from "./main-selectors.js";
+import { addToCartBig } from "./main-selectors.js";
 import { myOrders } from "./main-selectors.js";
 import { myOrdersMenu } from "./main-selectors.js";
 import { myOrderContent } from "./main-selectors.js";
@@ -76,6 +77,13 @@ export function renderImage(arr){
             productPriceExp.innerHTML = `$ ${item.price}`;
             productNameExp.innerHTML = item.title;
             productDescriptionExp.innerText = item.description;
+            addToCartBig.addEventListener("click", () => {
+                orderProducts.push(item);
+                priceSum = priceSum + item.price;
+                totalPrice.innerText = `$${priceSum}`;
+                console.log(priceSum)
+                renderOrderProducts(orderProducts)
+            })
             openProductDetail();
         })
 
@@ -134,6 +142,7 @@ export function renderOrderProducts(arr) {
 
         const closeIcon = document.createElement("img");
         closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
+        // closeIcon.addEventListener("click", removeItem)
 
         orderItem.append(itemFigure, itemOrderName, itemOrderPrice, closeIcon);
         myOrderContent.append(orderItem)

@@ -80,3 +80,7 @@ function openMyOrders() {
     toggleMobile()
     myOrders.classList.remove("slide-left")
 }
+
+function removeItem() {
+    
+}

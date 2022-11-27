@@ -25,6 +25,7 @@ export const productImageExp = document.querySelector("#productImage");
 export const productPriceExp = document.querySelector("#product-price");
 export const productNameExp = document.querySelector("#product-name");
 export const productDescriptionExp = document.querySelector("#product-description");
+export const addToCartBig = document.querySelector(".add-to-cart-button")
 
 //my order
 export const myOrders = document.querySelector("#myOrders");
