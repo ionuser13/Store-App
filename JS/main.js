@@ -102,7 +102,7 @@ export function renderImage(arr){
 //we've created created all the elements
 
 //declares which element goes inside another
-        productInfoFigure.append    (productImgCart);
+        productInfoFigure.append(productImgCart);
 
         info.append(productPrice, productName);
 
