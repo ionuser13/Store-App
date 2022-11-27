@@ -31,4 +31,4 @@ export const myOrders = document.querySelector("#myOrders");
 
 
 //desktop menu
-export const myOrdersMenu = document.querySelectorAll(".my-orders-desk")
+export const myOrdersMenu = document.querySelectorAll(".my-orders-desk");

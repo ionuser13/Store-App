@@ -59,6 +59,8 @@ export async function loadProducts(urlApi) {
     }
 }
 
+let orderProducts = [];
+
 export function renderImage(arr){
     for (let item of arr){
         const productCard = document.createElement("div");
@@ -87,9 +89,13 @@ export function renderImage(arr){
 
         const productInfoFigure = document.createElement("figure");
         
-        const productImgCart = document.createElement("img")
+        const productImgCart = document.createElement("img");
         productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
         productImgCart.classList.add("cart-image");
+        productImgCart.addEventListener("click", () => {
+            orderProducts.push(item);
+            console.log(orderProducts)
+        })
 //we've created created all the elements
 
 //declares which element goes inside another
