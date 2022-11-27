@@ -32,3 +32,7 @@ export const myOrders = document.querySelector("#myOrders");
 
 //desktop menu
 export const myOrdersMenu = document.querySelectorAll(".my-orders-desk");
+
+//order items
+export const myOrderContent = document.querySelector(".my-order-content");
+export const orderTotal = document.querySelector(".total")

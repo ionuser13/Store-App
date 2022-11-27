@@ -1,4 +1,4 @@
-import { menuEmail } from "./main-selectors.js";
+import { menuEmail, orderTotal } from "./main-selectors.js";
 import { desktopMenu } from "./main-selectors.js";
 import { burgerBtn } from "./main-selectors.js";
 import { mobileMenu } from "./main-selectors.js";
@@ -17,6 +17,7 @@ import { productNameExp } from "./main-selectors.js";
 import { productDescriptionExp } from "./main-selectors.js";
 import { myOrders } from "./main-selectors.js";
 import { myOrdersMenu } from "./main-selectors.js";
+import { myOrderContent } from "./main-selectors.js";
 
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart, openMyOrders } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
@@ -60,6 +61,7 @@ export async function loadProducts(urlApi) {
 }
 
 let orderProducts = [];
+let priceSum = [];
 
 export function renderImage(arr){
     for (let item of arr){
@@ -94,6 +96,7 @@ export function renderImage(arr){
         productImgCart.classList.add("cart-image");
         productImgCart.addEventListener("click", () => {
             orderProducts.push(item);
+            renderOrderProducts(orderProducts)
             console.log(orderProducts)
         })
 //we've created created all the elements
@@ -108,7 +111,29 @@ export function renderImage(arr){
         productCard.append(img, productInfo)
 
         cardsContainer.appendChild(productCard);
+    }
 }
+
+export function renderOrderProducts(arr) {
+        const orderItem = document.createElement("div");
+        orderItem.classList.add("shopping-cart");
+
+        const itemFigure = document.createElement("figure");
+        const itemImage  = document.createElement("img");
+        itemImage.setAttribute("src", arr[arr.length -1].images[0]);
+        itemFigure.append(itemImage);
+
+        const itemOrderName = document.createElement("p");
+        itemOrderName.innerText = arr[arr.length -1].title;
+
+        const itemOrderPrice = document.createElement("p");
+        itemOrderPrice.innerText = `$${arr[arr.length -1].price}`;
+
+        const closeIcon = document.createElement("img");
+        closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
+
+        orderItem.append(itemFigure, itemOrderName, itemOrderPrice, closeIcon)
+        myOrderContent.insertBefore(orderItem, orderTotal)
 }
 
 export let offset = 0;
