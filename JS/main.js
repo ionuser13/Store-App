@@ -37,7 +37,7 @@ burgerBtn.addEventListener("click", toggleMobile)
 menuCartIcon.addEventListener("click", toggleCartAside)
 
 //closes the product detail view when clicking
-productDetailClose.addEventListener("click", closeAside) 
+productDetailClose.addEventListener("click", closeAside) ;
 
 //to close the shopping cart from inside
 closeCart.forEach(button => {
@@ -70,6 +70,14 @@ export function renderImage(arr){
         const productCard = document.createElement("div");
         productCard.classList.add("product-card")
 
+        function sumProd() {
+            orderProducts.push(item);
+            priceSum = priceSum + item.price;
+            totalPrice.innerText = `$${priceSum}`;
+            console.log(priceSum)
+            renderOrderProducts(orderProducts)
+        }
+
         const img = document.createElement("img");
         img.setAttribute("src", item.images[0]);
         img.addEventListener("click", () => {
@@ -77,15 +85,13 @@ export function renderImage(arr){
             productPriceExp.innerHTML = `$ ${item.price}`;
             productNameExp.innerHTML = item.title;
             productDescriptionExp.innerText = item.description;
-            addToCartBig.addEventListener("click", () => {
-                orderProducts.push(item);
-                priceSum = priceSum + item.price;
-                totalPrice.innerText = `$${priceSum}`;
-                console.log(priceSum)
-                renderOrderProducts(orderProducts)
-            })
             openProductDetail();
+            addToCartBig.addEventListener("click", sumProd)
+            addToCartBig.addEventListener("click", () => {
+                addToCartBig.removeEventListener("click", sumProd)
+            })
         })
+       
 
         const productInfo = document.createElement("div");
         productInfo.classList.add("product-info")
@@ -103,16 +109,9 @@ export function renderImage(arr){
         const productImgCart = document.createElement("img");
         productImgCart.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/bt_add_to_cart.svg");
         productImgCart.classList.add("cart-image");
-        productImgCart.addEventListener("click", () => {
-            orderProducts.push(item);
-            priceSum = priceSum + item.price;
-            totalPrice.innerText = `$${priceSum}`;
-            console.log(priceSum)
-            renderOrderProducts(orderProducts)
-        })
-//we've created created all the elements
-
-//declares which element goes inside another
+        productImgCart.addEventListener("click", sumProd)
+        //we've created created all the elements
+        //declares which element goes inside another
         productInfoFigure.append(productImgCart);
 
         info.append(productPrice, productName);
