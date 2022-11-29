@@ -76,6 +76,7 @@ function closeAside(){
 function closeShopCart(){
     shoppingCartContainer.classList.add("slide-left");
     myOrders.classList.add("slide-left");
+    blackScreen.classList.add("none");
 }
 
 function openMyOrders() {

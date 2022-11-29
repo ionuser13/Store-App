@@ -20,6 +20,7 @@ import { myOrders } from "./main-selectors.js";
 import { myOrdersMenu } from "./main-selectors.js";
 import { myOrderContent } from "./main-selectors.js";
 import { totalPrice } from "./main-selectors.js";
+import { blackScreen } from "./main-selectors.js";
 
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart, openMyOrders } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
@@ -89,9 +90,9 @@ export function renderImage(arr){
         })
         img.addEventListener("click", () => {
                 addToCartBig.addEventListener("click", sumProd);
-                addToCartBig.addEventListener("click", () => {
-                    addToCartBig.removeEventListener("click", sumProd);
-                })
+        })
+        productDetailClose.addEventListener("click", () => {
+            addToCartBig.removeEventListener("click", sumProd);
         })
        
 
