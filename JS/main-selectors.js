@@ -38,3 +38,6 @@ export const myOrdersMenu = document.querySelectorAll(".my-orders-desk");
 export const myOrderContent = document.querySelector(".products");
 export const orderTotal = document.querySelector(".total");
 export const totalPrice = document.querySelector(".total-price");
+
+//black screen
+export const blackScreen = document.querySelector(".black-screen")

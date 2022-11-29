@@ -86,10 +86,12 @@ export function renderImage(arr){
             productNameExp.innerHTML = item.title;
             productDescriptionExp.innerText = item.description;
             openProductDetail();
-            addToCartBig.addEventListener("click", sumProd)
-            addToCartBig.addEventListener("click", () => {
-                addToCartBig.removeEventListener("click", sumProd)
-            })
+        })
+        img.addEventListener("click", () => {
+                addToCartBig.addEventListener("click", sumProd);
+                addToCartBig.addEventListener("click", () => {
+                    addToCartBig.removeEventListener("click", sumProd);
+                })
         })
        
 

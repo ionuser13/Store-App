@@ -10,6 +10,7 @@ import { productDetailClose } from "./main-selectors.js";
 import { closeCart } from "./main-selectors.js";
 import { cardsContainer } from "./main-selectors.js";
 import { myOrders } from "./main-selectors.js";
+import { blackScreen } from "./main-selectors.js";
 
 export {toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart, openMyOrders}
 
@@ -64,10 +65,12 @@ function openProductDetail() {
     if(!myOrders.classList.contains("slide-left")) {
         myOrders.classList.add("slide-left")
     }
+    blackScreen.classList.toggle("none");
 }//opens the aside when clicking an image from the store
 
 function closeAside(){
     productDetailContainer.classList.add("slide-left");
+    blackScreen.classList.toggle("none");
 }
 
 function closeShopCart(){
