@@ -21,6 +21,7 @@ import { myOrdersMenu } from "./main-selectors.js";
 import { myOrderContent } from "./main-selectors.js";
 import { totalPrice } from "./main-selectors.js";
 import { blackScreen } from "./main-selectors.js";
+import { currentItemsNum } from "./main-selectors.js";
 
 import { toggleCartAside, toggleMenu, toggleMobile, openProductDetail, closeAside, closeShopCart, openMyOrders } from "./eventListeners.js";
 export const api = "https://api.escuelajs.co/api/v1/";
@@ -64,6 +65,7 @@ export async function loadProducts(urlApi) {
 }
 
 let orderProducts = [];
+let currItems = orderProducts.length;
 let priceSum = 0;
 
 export function renderImage(arr){
@@ -73,6 +75,8 @@ export function renderImage(arr){
 
         function sumProd() {
             orderProducts.push(item);
+            currItems = orderProducts.length;
+            currentItemsNum.innerText = currItems;
             priceSum = priceSum + item.price;
             totalPrice.innerText = `$${priceSum}`;
             console.log(priceSum)

@@ -40,4 +40,7 @@ export const orderTotal = document.querySelector(".total");
 export const totalPrice = document.querySelector(".total-price");
 
 //black screen
-export const blackScreen = document.querySelector(".black-screen")
+export const blackScreen = document.querySelector(".black-screen");
+
+//current items in cart
+export const currentItemsNum = document.querySelector(".current-items")
