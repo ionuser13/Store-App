@@ -33,6 +33,7 @@ function toggleCartAside(){
         myOrders.classList.add("slide-left")
     }
     shoppingCartContainer.classList.toggle("slide-left");
+    blackScreen.classList.add("none");
 }
 
 function toggleMenu(){
@@ -56,6 +57,7 @@ function toggleMobile() {
     }
     mobileMenu.classList.toggle("slide-right")
     productDetailContainer.classList.add("slide-left");
+    blackScreen.classList.add("none");
     
 }
 
