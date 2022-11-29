@@ -79,7 +79,6 @@ export function renderImage(arr){
             currentItemsNum.innerText = currItems;
             priceSum = priceSum + item.price;
             totalPrice.innerText = `$${priceSum}`;
-            console.log(priceSum)
             renderOrderProducts(orderProducts)
         }
 
@@ -148,6 +147,9 @@ export function renderOrderProducts(arr) {
 
         const closeIcon = document.createElement("img");
         closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
+        closeIcon.addEventListener("click", () => {
+            console.log("hola")
+        })
         // closeIcon.addEventListener("click", removeItem)
 
         orderItem.append(itemFigure, itemOrderName, itemOrderPrice, closeIcon);
