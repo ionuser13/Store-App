@@ -145,15 +145,25 @@ export function renderOrderProducts(arr) {
         const itemOrderPrice = document.createElement("p");
         itemOrderPrice.innerText = `$${arr[arr.length -1].price}`;
 
-        const closeIcon = document.createElement("img");
-        closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
-        closeIcon.addEventListener("click", () => {
-            console.log("hola")
+        orderItem.append(itemFigure, itemOrderName, itemOrderPrice);
+
+        arr.forEach(item => {
+            const closeIcon = document.createElement("img");
+            closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
+            closeIcon.addEventListener("click", () => {
+                const index = arr.indexOf(item);
+                if (index > -1) {
+                    arr.splice(index, 1);
+                    console.log(arr)
+                }
+            });
+            orderItem.append(closeIcon)
         })
+
+        myOrderContent.append(orderItem)
         // closeIcon.addEventListener("click", removeItem)
 
-        orderItem.append(itemFigure, itemOrderName, itemOrderPrice, closeIcon);
-        myOrderContent.append(orderItem)
+        
 }
 
 export let offset = 0;
