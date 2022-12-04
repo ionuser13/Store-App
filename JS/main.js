@@ -131,36 +131,37 @@ export function renderImage(arr){
 }
 
 export function renderOrderProducts(arr) {
-        const orderItem = document.createElement("div");
-        orderItem.classList.add("shopping-cart");
+    const orderItem = document.createElement("li");
+    orderItem.classList.add("shopping-cart");
 
-        const itemFigure = document.createElement("figure");
-        const itemImage  = document.createElement("img");
-        itemImage.setAttribute("src", arr[arr.length -1].images[0]);
-        itemFigure.append(itemImage);
+    const itemFigure = document.createElement("figure");
+    const itemImage  = document.createElement("img");
+    itemImage.setAttribute("src", arr[arr.length -1].images[0]);
+    itemFigure.append(itemImage);
 
-        const itemOrderName = document.createElement("p");
-        itemOrderName.innerText = arr[arr.length -1].title;
+    const itemOrderName = document.createElement("p");
+    itemOrderName.innerText = arr[arr.length -1].title;
 
-        const itemOrderPrice = document.createElement("p");
-        itemOrderPrice.innerText = `$${arr[arr.length -1].price}`;
+    const itemOrderPrice = document.createElement("p");
+    itemOrderPrice.innerText = `$${arr[arr.length -1].price}`;
 
-        orderItem.append(itemFigure, itemOrderName, itemOrderPrice);
+    const closeIcon = document.createElement("img");
+    closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
 
-        arr.forEach(item => {
-            const closeIcon = document.createElement("img");
-            closeIcon.setAttribute("src", "./Assets/Platzi Yard Sale/Icons/icon_close.png");
-            closeIcon.addEventListener("click", () => {
-                const index = arr.indexOf(item);
-                if (index > -1) {
-                    arr.splice(index, 1);
-                    console.log(arr)
-                }
-            });
-            orderItem.append(closeIcon)
-        })
-
-        myOrderContent.append(orderItem)
+    orderItem.append(itemFigure, itemOrderName, itemOrderPrice);
+    myOrderContent.append(orderItem)
+    orderItem.append(closeIcon)
+    arr.forEach(item => {
+        closeIcon.addEventListener("click", () => {
+            const index = arr.indexOf(item);
+            if (index > -1) {
+                arr.splice(index, 1);
+                myOrderContent.innerText = "";
+                renderOrderProducts(arr)
+                console.log(arr)
+            }
+        });
+    })
         // closeIcon.addEventListener("click", removeItem)
 
         
