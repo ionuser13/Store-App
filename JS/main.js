@@ -151,7 +151,6 @@ export function renderOrderProducts(arr) {
     orderItem.append(itemFigure, itemOrderName, itemOrderPrice);
     myOrderContent.append(orderItem)
     orderItem.append(closeIcon)
-    arr.forEach(item => {
         closeIcon.addEventListener("click", () => {
             const index = arr.indexOf(item);
             if (index > -1) {
@@ -160,7 +159,6 @@ export function renderOrderProducts(arr) {
                 renderOrderProducts(arr)
                 console.log(arr)
             }
-        });
     })
         // closeIcon.addEventListener("click", removeItem)
 
@@ -168,8 +166,9 @@ export function renderOrderProducts(arr) {
 }
 
 export let offset = 0;
-loadMore.addEventListener("click", () => {
+export function loadMoreItems() {
     offset+=10;
     loadProducts(`${api}products?offset=${offset}&limit=10`)
-})
+}
+loadMore.addEventListener("click", loadMoreItems)
 loadProducts(`${api}products?offset=${offset}&limit=10`)
